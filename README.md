@@ -1,6 +1,22 @@
 ## AWS 建立 IAM 帳號
 
-從 AWS Root 帳號開始，啟用台北區域（Taipei Region）的 IAM Identity Center，並配置擁有完全存取權限的 IAM User 與群組。
+從 AWS Root 帳號 開始，先啟用 Taipei Region（ap-east-2 / Asia Pacific Taipei）
+接著在 IAM Identity Center 中建立對應的 使用者、群組與權限集
+並將 Admin 使用者指派到完全存取權限的 IAM User 與群組
+確保日常管理工作可以透過 Admin 帳號完成，同時降低 Root 帳號被誤用或外洩的風險。
+
+在帳號規劃上，至少需要準備兩個不同用途的帳號：
+【AWS Root 帳號】
+僅用於 AWS 帳號初始化、付款資訊、帳號層級設定，以及啟用 IAM Identity Center。
+完成初始設定後，不應作為日常管理或開發使用。
+必須啟用 MFA，並妥善保管 Root 登入資訊。
+
+【IAM User 帳號管理員帳號 Admin User】
+透過 IAM Identity Center 建立一個專門用於日常管理的使用者。
+將此使用者加入 Administrators 或 Admin 群組。
+為該群組配置具備完整管理權限的 Permission Set，AdministratorAccess。
+後續 AWS 管理操作應使用此 Admin 帳號登入，而不是直接使用 Root 帳號。
+
 
 ### ① Root Account 登入與環境準備
 
