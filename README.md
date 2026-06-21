@@ -172,7 +172,7 @@
         
     - 複製郵件中的連結（登入口路徑格式：`https://d-OOOOOOOO.awsapps.com/start/`），貼到無痕視窗中打開。(注意：這個網址很重要要記錄下來)
         
-	- 使用無痕視窗的登入【IAM User 管理員 Admin 帳號】， 輸入 Username **：
+	- 使用無痕視窗的登入【IAM User 管理員 Admin 帳號】， **輸入 Username**：
     
     - **請輸入新建立的「使用者名稱（Username，例如 `sunny_admin`）」進行登入，切勿輸入 Email 帳號。**
 
