@@ -6,12 +6,15 @@
 確保日常管理工作可以透過 Admin 帳號完成，同時降低 Root 帳號被誤用或外洩的風險。
 
 在帳號規劃上，至少需要準備兩個不同用途的帳號：
-【AWS Root 帳號】
+
+###【AWS Root 帳號】
+
 僅用於 AWS 帳號初始化、付款資訊、帳號層級設定，以及啟用 IAM Identity Center。
 完成初始設定後，不應作為日常管理或開發使用。
 必須啟用 MFA，並妥善保管 Root 登入資訊。
 
-【IAM User 帳號管理員帳號 Admin User】
+###【IAM User 帳號管理員帳號 Admin User】
+
 透過 IAM Identity Center 建立一個專門用於日常管理的使用者。
 將此使用者加入 Administrators 或 Admin 群組。
 為該群組配置具備完整管理權限的 Permission Set，AdministratorAccess。
