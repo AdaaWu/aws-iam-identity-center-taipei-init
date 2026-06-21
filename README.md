@@ -1,4 +1,4 @@
-## AWS 建立 IAM 帳號
+# AWS 建立 IAM 帳號
 
 從 AWS Root 帳號 開始，先啟用 Taipei Region（ap-east-2 / Asia Pacific Taipei）
 接著在 IAM Identity Center 中建立對應的 使用者、群組與權限集
@@ -7,13 +7,13 @@
 
 在帳號規劃上，至少需要準備兩個不同用途的帳號：
 
-###【AWS Root 帳號】
+##  【AWS Root 帳號】
 
 僅用於 AWS 帳號初始化、付款資訊、帳號層級設定，以及啟用 IAM Identity Center。
 完成初始設定後，不應作為日常管理或開發使用。
 必須啟用 MFA，並妥善保管 Root 登入資訊。
 
-###【IAM User 帳號管理員帳號 Admin User】
+##  【IAM User 帳號管理員帳號 Admin User】
 
 透過 IAM Identity Center 建立一個專門用於日常管理的使用者。
 將此使用者加入 Administrators 或 Admin 群組。
@@ -21,7 +21,7 @@
 後續 AWS 管理操作應使用此 Admin 帳號登入，而不是直接使用 Root 帳號。
 
 
-### ① Root Account 登入與環境準備
+##  ① Root Account 登入與環境準備
 
 1. **Root Account 註冊與登入**：
 	- 前往  [AWS Console](https://aws.amazon.com/console/) 註冊 帳號，基本上跟者註冊操作引導即可，完成後以 Root Account 身分登入主控台。（注意：是 AWS 主控台入口，不是一般官網登入口 )
@@ -58,7 +58,7 @@
 ![](images/04-root-mfa-authenticator.png)
         
 
-### ② 啟用 IAM Identity Center 來建立部署用的 IAM Account User
+## ② 啟用 IAM Identity Center 來建立部署用的 IAM Account User
 
 1. **進入服務**：在搜尋列輸入並進入 **IAM Identity Center** 主控台。
     
@@ -77,7 +77,7 @@
     - 確認無誤後，再次點擊 **Enable** 完成組織級別的啟用。
         
 
-### ③ Create group 建立 IAM User 與群組 
+## ③ Create group 建立 IAM User 與群組 
 
 1. **Create IAM User**：
     
@@ -100,7 +100,7 @@
 
 
 
-### ④ 配置權限集（Permission Sets）
+## ④ 配置權限集（Permission Sets）
 
 1. **建立權限集**：
     
@@ -129,7 +129,7 @@
 
 ![](images/10-permission-set-created.png)
 
-### ⑤ 將權限指派給 AWS 帳號
+## ⑤ 將權限指派給 AWS 帳號
 
 1. **關聯帳號與權限**：
     
@@ -160,7 +160,7 @@
 
 ![](images/16-send-email-verification.png)
 
-### ⑥ 安全登出與 IAM User 無痕登入驗證
+## ⑥ 安全登出與 IAM User 無痕登入驗證
 
 1. **資安關鍵操作**：
     
@@ -181,7 +181,7 @@
     - 在無痕視窗的登入頁面中，**請輸入新建立的「使用者名稱（Username，例如 `sunny_admin`）」進行登入，切勿輸入 Email 帳號。**
 
 
-##### 備註
+## ## 備註
 
 登入口
 [Amazon Web Services Sign-In](https://signin.aws.amazon.com/signin?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fca-oauth-flow-id%3Dc495%26hashArgs%3D%2523%26isauthcode%3Dtrue%26oauthStart%3D1779454071670%26state%3DhashArgsFromTB_eu-north-1_33c2570f6d91a55e&page=resolve&code_challenge=jO1A_wSFE8c40uQqihEXM69OjJdexYn0CU_tiS1if7I&code_challenge_method=SHA-256&backwards_compatible=true)
