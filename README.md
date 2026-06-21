@@ -161,31 +161,19 @@
 ![](images/16-send-email-verification.png)
 
 ## ⑥ 安全登出與 IAM User 無痕登入驗證
-
-1. **資安關鍵操作**：
     
-    - **Root 帳號權限過大，完成上述設定後請立刻登出。** 避免 Session 閒置遭到劫持或盜用。
-        
-2. **開啟無痕視窗**：
+1. **開啟無痕視窗**：
     
-    - 準備測試另外個帳號時，**必須開啟瀏覽器的「無痕視窗」**。如果直接在原視窗開啟，會與舊的 Root 帳號 Session 衝突而導致目前的帳號被登出。
+    - 準備登入不同帳號時，**必須開啟瀏覽器的「無痕視窗」**。如果直接在原視窗開啟，會與原有的 Root 帳號 Session 衝突而導致目前的帳號被登出。
         
-3. **使用 Portal URL 登入**：
+2. **使用 Portal URL 登入**：
     
     - 檢查 IAM User 帳號填寫的電子信箱，打開包含 **AWS Access Portal URL** 的重要郵件。
         
-    - 複製郵件中的連結（格式類似：`https://d-OOOOOOOO.awsapps.com/start/`），貼到無痕視窗中打開。(注意：這個網址很重要要記錄下來)
+    - 複製郵件中的連結（登入口路徑格式：`https://d-OOOOOOOO.awsapps.com/start/`），貼到無痕視窗中打開。(注意：這個網址很重要要記錄下來)
         
-4. **輸入 Username 登入**：
+	- 使用無痕視窗的登入【IAM User 管理員 Admin 帳號】， 輸入 Username **：
     
-    - 在無痕視窗的登入頁面中，**請輸入新建立的「使用者名稱（Username，例如 `sunny_admin`）」進行登入，切勿輸入 Email 帳號。**
+    - **請輸入新建立的「使用者名稱（Username，例如 `sunny_admin`）」進行登入，切勿輸入 Email 帳號。**
 
 
-## ## 備註
-
-登入口
-[Amazon Web Services Sign-In](https://signin.aws.amazon.com/signin?client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fca-oauth-flow-id%3Dc495%26hashArgs%3D%2523%26isauthcode%3Dtrue%26oauthStart%3D1779454071670%26state%3DhashArgsFromTB_eu-north-1_33c2570f6d91a55e&page=resolve&code_challenge=jO1A_wSFE8c40uQqihEXM69OjJdexYn0CU_tiS1if7I&code_challenge_method=SHA-256&backwards_compatible=true)
-
-可以從這裡登入 IAM User
-
-![](images/17-iam-user-sign-in.png)
